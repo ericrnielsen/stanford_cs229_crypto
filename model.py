@@ -381,7 +381,7 @@ def main():
     #######################################################
     # Default (run model using final hyperparameters)
     #######################################################
-    if (False):
+    if (True):
         print "Running model using default configurations..."
         run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True)
 
@@ -453,7 +453,7 @@ def main():
     #######################################################
     # Experiment 2: Looking at feature weights
     #######################################################
-    if (True):
+    if (False):
 
         # Choose if running for model validation (dev set) or final testing (test set)
         run_type = 'validation'
