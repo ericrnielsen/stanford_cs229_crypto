@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import pickle 
 
 from util import *
 
@@ -8,6 +9,9 @@ from util import *
 # Setup constant values to be used later 
 ################################################################################################
 ################################################################################################
+
+# Coins
+COINS = ['bitcoin', 'ethereum', 'litecoin']
 
 # Labeled data file paths (news headlines and tweets)
 HEADLINES_TRAIN_FILE = "data/news_and_tweets/labeled/headlines_labeled_train.csv"
@@ -206,19 +210,20 @@ def predict_prices(run_type, data_type, media_data, all_prices, label_column, cl
 
     # Finally, evaluate the price predictions (for 1 day out)
     days_change = 1
-    cache, changes = get_increase_decrease(pred_df, predicted_labels_column, '1D Percent Change', days_change, 'counts')
+    cache, changes = single_model_evaluate(pred_df, predicted_labels_column, '1D Percent Change', days_change, 'counts')
 
     # Return
     toReturn = {}
     toReturn['cache'] = cache
     toReturn['changes'] = changes
     toReturn['pred_df'] = pred_df
-    return toReturn
+    return toReturn  
 
 #################################################################
 # Model evaluation 
+# Note: This is based on a single data type's predictions (headlines or tweets)
 #################################################################
-def get_increase_decrease(df, sum_pred_labels_column, change_column, num_days_change, counts_per_day_column):
+def single_model_evaluate(df, sum_pred_labels_column, change_column, num_days_change, counts_per_day_column):
     
     #df: (DataFrame) that contains the counts of labels per day and price change
     #sum_pred_labels_column: (string) Column of predicted labels corresponding to unit of change used
@@ -281,12 +286,111 @@ def get_increase_decrease(df, sum_pred_labels_column, change_column, num_days_ch
     # Return
     return cache, all_changes
 
+#################################################################
+# Model evaluation 
+# Note: This is based on combining headline and tweet-based predictions
+# Note: Cannot be called until single_model_evaluate has been run for both
+#################################################################
+def combined_model_evaluate(headline_results, tweet_results, bias_direction):
+
+    # New list to store info for all 6 prediction labels
+    all_results = []
+
+    # Loop through each of the prediction labels
+    i = -1
+    # Loop through all prediction labels
+    for label in PREDICTION_LABELS:
+        i += 1  
+
+        # Results for prediction label stored in dict, then added to master results list
+        label_results = {}
+
+        # New list to store combined predictions
+        combined_changes = []
+
+        # For more granular details
+        cache = {}
+        cache['price_increase'] = []
+        cache['price_decrease'] = []
+        cache['price_increase_wrong'] = []
+        cache['price_decrease_wrong'] = []
+        cache['all_price_increase'] = []
+        cache['all_price_decrease'] = []
+
+        # Extract predicted price changes for both headlines and tweets
+        hl_changes = headline_results[i]['changes']
+        t_changes = tweet_results[i]['changes']
+
+        # Loop through each at the same time
+        day = -1
+        for hl_change, t_change in zip(hl_changes, t_changes):
+            day += 1
+
+            # Split into actual price changes and predicted price changes
+            price_change, hl_pred = hl_change
+            price_change, t_pred = t_change
+
+            # Make combined prediction (favor the bias direction)
+            # E.g., if bias direction is 'increase', then will predict price increase if at
+            # least one of the single predictions is a price increase
+            if (bias_direction == 'increase'):
+                # 1 and -2 values correspond to an increase prediction (see code in single_model_evaluate)
+                if (hl_pred == 1 or t_pred == 1 or hl_pred == -2 or t_pred == -2):
+                    combined_pred = 'increase'
+                else:
+                    combined_pred = 'decrease'
+
+            else:
+                # -1 and 2 values correspond to a decrease prediction (see code in single_model_evaluate)
+                if (hl_pred == -1 or t_pred == -1 or hl_pred == 2 or t_pred == 2):
+                    combined_pred = 'decrease'
+                else:
+                    combined_pred = 'increase'
+
+            # Compare to actual price changes, starting with price increases
+            if (price_change) > 0:
+                # Correct
+                if (combined_pred == 'increase'):
+                    cache['price_increase'].append(price_change)
+                    cache['all_price_increase'].append((price_change, 1))
+                    combined_changes.append((price_change, 1))
+                # Incorrect
+                else:
+                    cache['price_increase_wrong'].append(price_change)
+                    cache['all_price_increase'].append((price_change, 0))
+                    combined_changes.append((price_change, 2))
+            # Price decreases
+            else:
+                # Correct
+                if (combined_pred == 'decrease'):
+                    cache['price_decrease'].append(price_change)
+                    cache['all_price_decrease'].append((price_change, 1))
+                    combined_changes.append((price_change, -1))
+                # Incorrect
+                else:
+                    cache['price_decrease_wrong'].append(price_change)
+                    cache['all_price_decrease'].append((price_change, 0))
+                    combined_changes.append((price_change, -2))
+
+        # Calculate total accuracy (# correct predictions / # total predictions)
+        num_correct = len(cache['price_increase']) + len(cache['price_decrease'])
+        num_total = len(cache['all_price_increase']) + len(cache['all_price_decrease'])
+        cache['accuracy'] = float(num_correct) / float(num_total)
+
+        # Add to master results list
+        label_results['changes'] = combined_changes
+        label_results['cache'] = cache
+        all_results.append(label_results)
+
+    # Return
+    return all_results 
+
 ################################################################################################
 ################################################################################################
 # Run model (the function that ties everything together)
 ################################################################################################
 ################################################################################################
-def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True):
+def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True, saved_structs=False):
 
     # Split twitter input data
     btc_all_data, eth_all_data, ltc_all_data = tweets_all_data[0], tweets_all_data[1], tweets_all_data[2]
@@ -294,8 +398,9 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
     #################################
     # Headlines
     #################################
-    if False:
-        print "Predicting based on news headlines..."
+    print "Predicting based on news headlines..."
+    # If no saved results to load
+    if not (saved_structs):
         hl_classifier_results = []
         hl_final_predictions = []
         # Loop through all prediction labels
@@ -307,37 +412,79 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
             hl_classifier_results.append(classifier_results)
             hl_final_predictions.append(final_predictions)
             print "Finished %s." % label
-        # Print results
-        if (print_results): print_predictions('Headlines', classifier, hl_final_predictions)
-        # Plot results
-        if (plot_results): plot_predictions('Headlines', classifier, hl_final_predictions)
+        # Save results
+        file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, classifier), 'wb')
+        file2 = open('saved_model_structs/%s_%s_hl_final_predictions.pkl' % (run_type, classifier), 'wb')
+        pickle.dump(hl_classifier_results, file1)
+        pickle.dump(hl_final_predictions, file2)
+        file1.close()
+        file2.close()
+    # Else load saved results 
+    else:
+        file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, classifier), 'rb')
+        file2 = open('saved_model_structs/%s_%s_hl_final_predictions.pkl' % (run_type, classifier), 'rb')
+        hl_classifier_results = pickle.load(file1)
+        hl_final_predictions = pickle.load(file2)
+        file1.close()
+        file2.close()
+    # Print results
+    if (print_results): print_predictions('Headlines', classifier, hl_final_predictions)
+    # Plot results
+    if (plot_results): plot_predictions('Headlines', classifier, hl_final_predictions)
 
     #################################
     # Tweets
     #################################
     print "Predicting based on tweets..."
-    t_classifier_results = []
-    t_final_predictions = []
-    # Loop through all prediction labels
-    for label in PREDICTION_LABELS:
-        # Select tweet data appropriately for label
-        if (label == BTC_COL_1_D or label == BTC_COL_2_D):  # Bitcoin
-            media_data = btc_all_data
-        elif (label == ETH_COL_1_D or label == ETH_COL_2_D): # Ethereum
-            media_data = eth_all_data
-        else: # Litecoin
-            media_data = ltc_all_data
-        # Run model to assign labels to dev/test data, then use to make coin price predictions
-        classifier_results = model_fit_and_predict(run_type, 'tweets', media_data, label, classifier)
-        final_predictions = predict_prices(run_type, 'tweets', media_data, all_prices, label, classifier_results['pred_results'])
+    # If no saved results to load
+    if not (saved_structs):
+        t_classifier_results = []
+        t_final_predictions = []
+        # Loop through all prediction labels
+        for label in PREDICTION_LABELS:
+            # Select tweet data appropriately for label
+            if (label == BTC_COL_1_D or label == BTC_COL_2_D):  # Bitcoin
+                media_data = btc_all_data
+            elif (label == ETH_COL_1_D or label == ETH_COL_2_D): # Ethereum
+                media_data = eth_all_data
+            else: # Litecoin
+                media_data = ltc_all_data
+            # Run model to assign labels to dev/test data, then use to make coin price predictions
+            classifier_results = model_fit_and_predict(run_type, 'tweets', media_data, label, classifier)
+            final_predictions = predict_prices(run_type, 'tweets', media_data, all_prices, label, classifier_results['pred_results'])
+            # Save results
+            t_classifier_results.append(classifier_results)
+            t_final_predictions.append(final_predictions)
+            print "Finished %s." % label
         # Save results
-        t_classifier_results.append(classifier_results)
-        t_final_predictions.append(final_predictions)
-        print "Finished %s." % label
+        file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, classifier), 'wb')
+        file2 = open('saved_model_structs/%s_%s_t_final_predictions.pkl' % (run_type, classifier), 'wb')
+        pickle.dump(t_classifier_results, file1)
+        pickle.dump(t_final_predictions, file2)
+        file1.close()
+        file2.close()
+    # Else load saved results 
+    else:
+        file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, classifier), 'rb')
+        file2 = open('saved_model_structs/%s_%s_t_final_predictions.pkl' % (run_type, classifier), 'rb')
+        t_classifier_results = pickle.load(file1)
+        t_final_predictions = pickle.load(file2)
+        file1.close()
+        file2.close()
     # Print results
     if (print_results): print_predictions('Tweets', classifier, t_final_predictions)
     # Plot results
     if (plot_results): plot_predictions('Tweets', classifier, t_final_predictions) 
+
+    #################################
+    # Combined
+    #################################
+    print "Predicting based on both news headlines and tweets..."
+    combined_final_predictions = combined_model_evaluate(hl_final_predictions, t_final_predictions, 'increase')
+    # Print results
+    if (print_results): print_predictions('Combined', classifier, combined_final_predictions)
+    # Plot results
+    if (plot_results): plot_predictions('Combined', classifier, combined_final_predictions) 
 
 ################################################################################################
 ################################################################################################
@@ -383,7 +530,7 @@ def main():
     #######################################################
     if (True):
         print "Running model using default configurations..."
-        run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True)
+        run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True, saved_structs=True)
 
     #######################################################
     # Experiment 0.1: Plot coin prices during train, dev, and test time periods
@@ -448,7 +595,7 @@ def main():
         # Loop through all classifiers
         for classifier in CLASSIFIERS:
             print "Running model using %s classifier..." % classifier
-            run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=False)
+            run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=False, saved_structs=False)
 
     #######################################################
     # Experiment 2: Looking at feature weights
@@ -456,40 +603,69 @@ def main():
     if (False):
 
         # Choose if running for model validation (dev set) or final testing (test set)
-        run_type = 'validation'
-        #run_type = 'test'
+        #run_type = 'validation'
+        run_type = 'test'
 
         # Choose number of top features to see weights for
         num_top_features = 30
 
+        # Can saved classifier result structs be loaded?
+        saved_structs = True
+
+        #################################
         # Headlines
+        #################################
         print "Predicting based on news headlines..."
-        hl_classifier_results = []
-        # Loop through all prediction labels
-        for label in PREDICTION_LABELS:
-            # Run model to assign labels to dev/test data, save results
-            classifier_results = model_fit_and_predict(run_type, 'headlines', hl_all_data, label, 'logistic_regression')
-            hl_classifier_results.append(classifier_results)
-            print "Finished %s." % label
+        # If no saved results to load
+        if not (saved_structs):
+            hl_classifier_results = []
+            # Loop through all prediction labels
+            for label in PREDICTION_LABELS:
+                # Run model to assign labels to dev/test data, save results
+                classifier_results = model_fit_and_predict(run_type, 'headlines', hl_all_data, label, 'logistic_regression')
+                hl_classifier_results.append(classifier_results)
+                print "Finished %s." % label
+            # Save results
+            file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, 'logistic_regression'), 'wb')
+            pickle.dump(hl_classifier_results, file1)
+            file1.close()
+        # Else load saved results 
+        else:
+            file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, 'logistic_regression'), 'rb')
+            hl_classifier_results = pickle.load(file1)
+            file1.close()
         # Plot results
         plot_multi_top_weights('Headlines', hl_classifier_results, num_top_features)
 
+        #################################
         # Tweets
+        #################################
         print "Predicting based on tweets..."
-        t_classifier_results = []
-        # Loop through all prediction labels
-        for label in PREDICTION_LABELS:
-            # Select tweet data appropriately for label
-            if (label == BTC_COL_1_D or label == BTC_COL_2_D):  # Bitcoin
-                media_data = btc_all_data
-            elif (label == ETH_COL_1_D or label == ETH_COL_2_D): # Ethereum
-                media_data = eth_all_data
-            else: # Litecoin
-                media_data = ltc_all_data
-            # Run model to assign labels to dev/test data, save results
-            classifier_results = model_fit_and_predict(run_type, 'tweets', media_data, label, 'logistic_regression')
-            t_classifier_results.append(classifier_results)
-            print "Finished %s." % label
+        # If no saved results to load
+        if not (saved_structs):
+            t_classifier_results = []
+            # Loop through all prediction labels
+            for label in PREDICTION_LABELS:
+                # Select tweet data appropriately for label
+                if (label == BTC_COL_1_D or label == BTC_COL_2_D):  # Bitcoin
+                    media_data = btc_all_data
+                elif (label == ETH_COL_1_D or label == ETH_COL_2_D): # Ethereum
+                    media_data = eth_all_data
+                else: # Litecoin
+                    media_data = ltc_all_data
+                # Run model to assign labels to dev/test data, save results
+                classifier_results = model_fit_and_predict(run_type, 'tweets', media_data, label, 'logistic_regression')
+                t_classifier_results.append(classifier_results)
+                print "Finished %s." % label
+            # Save results
+            file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, 'logistic_regression'), 'wb')
+            pickle.dump(t_classifier_results, file1)
+            file1.close()
+        # Else load saved results 
+        else:
+            file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, 'logistic_regression'), 'rb')
+            t_classifier_results = pickle.load(file1)
+            file1.close()
         # Plot results
         plot_multi_top_weights('Tweets', t_classifier_results, num_top_features)
 

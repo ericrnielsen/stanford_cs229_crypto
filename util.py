@@ -364,8 +364,9 @@ def print_predictions(data_type, classifier, results):
         price_decrease_1day_wrong_df = pd.Series(results[i]['cache']['price_decrease_wrong'])
         print price_decrease_1day_wrong_df.describe()
         # Stats for the full DataFrame to see how we compare to the average increases/decreases and max/mins
-        print "--------------------------------"
-        print results[i]['pred_df']['1D Percent Change'].describe()
+        if (data_type != 'Combined'):
+            print "--------------------------------"
+            print results[i]['pred_df']['1D Percent Change'].describe()
 
 #################################################################
 # Plot predicted price changes
