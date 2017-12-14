@@ -72,7 +72,8 @@ def clean_text(text):
 #################################################################
 def spacy_tokenizer(sentence):
     tokens = parser(sentence)
-    #tokens = [tok for tok in tokens if not (tok.pos_ == "NUM" and not tok.is_alpha)]  # Uncomment this line to remove numbers
+    tokens = [tok for tok in tokens if not (tok.pos_ == "NUM" and not tok.is_alpha)]  # Remove numbers
+    tokens = [tok for tok in tokens if not (len(set(tok.lower_)) == 1 and set(tok.lower_)[0] == '.')]  # Remove strings of periods
     tokens = [tok.lemma_.lower().strip() if tok.lemma_ != "-PRON-" else tok.lower_ for tok in tokens]
     tokens = [tok for tok in tokens if (tok not in stopwords and tok not in punctuations)] 
     return tokens
