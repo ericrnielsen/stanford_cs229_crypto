@@ -1,0 +1,744 @@
+#################################################################
+#################################################################
+LOGISTIC REGRESSION
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:
+Accuracy:	 99.14
+TESTING:
+Accuracy:	 55.94
+Precision:	 65.80
+Recall:		 66.61
+F1-score:	 66.20
+Confusion Matrix:
+[[127 223]
+ [215 429]]
+Normalized Confusion Matrix:
+[[ 0.36285714  0.63714286]
+ [ 0.33385093  0.66614907]]
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:
+Accuracy:	 99.18
+TESTING:
+Accuracy:	 61.37
+Precision:	 72.97
+Recall:		 73.78
+F1-score:	 73.37
+Confusion Matrix:
+[[ 81 196]
+ [188 529]]
+Normalized Confusion Matrix:
+[[ 0.29241877  0.70758123]
+ [ 0.26220363  0.73779637]]
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:
+Accuracy:	 99.48
+TESTING:
+Accuracy:	 52.52
+Precision:	 52.26
+Recall:		 55.85
+F1-score:	 54.00
+Confusion Matrix:
+[[245 253]
+ [219 277]]
+Normalized Confusion Matrix:
+[[ 0.49196787  0.50803213]
+ [ 0.44153226  0.55846774]]
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:
+Accuracy:	 99.52
+TESTING:
+Accuracy:	 53.42
+Precision:	 56.52
+Recall:		 67.94
+F1-score:	 61.70
+Confusion Matrix:
+[[158 287]
+ [176 373]]
+Normalized Confusion Matrix:
+[[ 0.35505618  0.64494382]
+ [ 0.32058288  0.67941712]]
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:
+Accuracy:	 99.74
+TESTING:
+Accuracy:	 49.30
+Precision:	 59.37
+Recall:		 42.00
+F1-score:	 49.19
+Confusion Matrix:
+[[246 167]
+ [337 244]]
+Normalized Confusion Matrix:
+[[ 0.59564165  0.40435835]
+ [ 0.58003442  0.41996558]]
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:
+Accuracy:	 99.52
+TESTING:
+Accuracy:	 48.99
+Precision:	 54.38
+Recall:		 53.69
+F1-score:	 54.03
+Confusion Matrix:
+[[189 250]
+ [257 298]]
+Normalized Confusion Matrix:
+[[ 0.43052392  0.56947608]
+ [ 0.46306306  0.53693694]]
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:
+Accuracy:	 97.82
+TESTING:
+Accuracy:	 55.80
+Precision:	 64.99
+Recall:		 69.66
+F1-score:	 67.24
+Confusion Matrix:
+[[ 620 1451]
+ [1173 2693]]
+Normalized Confusion Matrix:
+[[ 0.29937228  0.70062772]
+ [ 0.30341438  0.69658562]]
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:
+Accuracy:	 97.82
+TESTING:
+Accuracy:	 61.19
+Precision:	 71.97
+Recall:		 75.15
+F1-score:	 73.53
+Confusion Matrix:
+[[ 433 1246]
+ [1058 3200]]
+Normalized Confusion Matrix:
+[[ 0.2578916   0.7421084 ]
+ [ 0.24847346  0.75152654]]
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:
+Accuracy:	 97.46
+TESTING:
+Accuracy:	 51.44
+Precision:	 50.34
+Recall:		 58.23
+F1-score:	 54.00
+Confusion Matrix:
+[[1246 1528]
+ [1111 1549]]
+Normalized Confusion Matrix:
+[[ 0.44917087  0.55082913]
+ [ 0.41766917  0.58233083]]
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:
+Accuracy:	 97.58
+TESTING:
+Accuracy:	 52.61
+Precision:	 54.15
+Recall:		 70.92
+F1-score:	 61.41
+Confusion Matrix:
+[[ 810 1735]
+ [ 840 2049]]
+Normalized Confusion Matrix:
+[[ 0.31827112  0.68172888]
+ [ 0.29075805  0.70924195]]
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:
+Accuracy:	 97.53
+TESTING:
+Accuracy:	 51.48
+Precision:	 57.12
+Recall:		 46.98
+F1-score:	 51.55
+Confusion Matrix:
+[[1459 1102]
+ [1657 1468]]
+Normalized Confusion Matrix:
+[[ 0.56969934  0.43030066]
+ [ 0.53024     0.46976   ]]
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:
+Accuracy:	 97.70
+TESTING:
+Accuracy:	 50.70
+Precision:	 54.80
+Recall:		 56.83
+F1-score:	 55.80
+Confusion Matrix:
+[[1114 1459]
+ [1344 1769]]
+Normalized Confusion Matrix:
+[[ 0.43295764  0.56704236]
+ [ 0.43173787  0.56826213]]
+DN51r060:FINAL FILES ericnielsen$ 
+
+#################################################################
+#################################################################
+LINEAR SVC
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:
+Accuracy:	 99.85
+TESTING:
+Accuracy:	 55.94
+Precision:	 67.40
+Recall:		 61.96
+F1-score:	 64.56
+Confusion Matrix:
+[[157 193]
+ [245 399]]
+Normalized Confusion Matrix:
+[[ 0.44857143  0.55142857]
+ [ 0.38043478  0.61956522]]
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:
+Accuracy:	 99.85
+TESTING:
+Accuracy:	 57.04
+Precision:	 73.54
+Recall:		 63.18
+F1-score:	 67.97
+Confusion Matrix:
+[[114 163]
+ [264 453]]
+Normalized Confusion Matrix:
+[[ 0.41155235  0.58844765]
+ [ 0.36820084  0.63179916]]
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:
+Accuracy:	 99.74
+TESTING:
+Accuracy:	 51.71
+Precision:	 51.54
+Recall:		 53.83
+F1-score:	 52.66
+Confusion Matrix:
+[[247 251]
+ [229 267]]
+Normalized Confusion Matrix:
+[[ 0.49598394  0.50401606]
+ [ 0.46169355  0.53830645]]
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:
+Accuracy:	 99.81
+TESTING:
+Accuracy:	 53.32
+Precision:	 57.14
+Recall:		 61.93
+F1-score:	 59.44
+Confusion Matrix:
+[[190 255]
+ [209 340]]
+Normalized Confusion Matrix:
+[[ 0.42696629  0.57303371]
+ [ 0.38069217  0.61930783]]
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:
+Accuracy:	 99.85
+TESTING:
+Accuracy:	 50.80
+Precision:	 60.36
+Recall:		 46.13
+F1-score:	 52.29
+Confusion Matrix:
+[[237 176]
+ [313 268]]
+Normalized Confusion Matrix:
+[[ 0.57384988  0.42615012]
+ [ 0.53872633  0.46127367]]
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:
+Accuracy:	 99.85
+TESTING:
+Accuracy:	 49.60
+Precision:	 54.96
+Recall:		 53.87
+F1-score:	 54.41
+Confusion Matrix:
+[[194 245]
+ [256 299]]
+Normalized Confusion Matrix:
+[[ 0.44191344  0.55808656]
+ [ 0.46126126  0.53873874]]
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:
+Accuracy:	 99.18
+TESTING:
+Accuracy:	 54.72
+Precision:	 65.80
+Recall:		 63.45
+F1-score:	 64.60
+Confusion Matrix:
+[[ 796 1275]
+ [1413 2453]]
+Normalized Confusion Matrix:
+[[ 0.38435538  0.61564462]
+ [ 0.36549405  0.63450595]]
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:
+Accuracy:	 99.17
+TESTING:
+Accuracy:	 58.31
+Precision:	 72.38
+Recall:		 67.71
+F1-score:	 69.97
+Confusion Matrix:
+[[ 579 1100]
+ [1375 2883]]
+Normalized Confusion Matrix:
+[[ 0.34484812  0.65515188]
+ [ 0.32292156  0.67707844]]
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:
+Accuracy:	 98.88
+TESTING:
+Accuracy:	 51.79
+Precision:	 50.68
+Recall:		 56.35
+F1-score:	 53.36
+Confusion Matrix:
+[[1315 1459]
+ [1161 1499]]
+Normalized Confusion Matrix:
+[[ 0.4740447   0.5259553 ]
+ [ 0.43646617  0.56353383]]
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:
+Accuracy:	 99.00
+TESTING:
+Accuracy:	 51.86
+Precision:	 53.92
+Recall:		 64.94
+F1-score:	 58.92
+Confusion Matrix:
+[[ 942 1603]
+ [1013 1876]]
+Normalized Confusion Matrix:
+[[ 0.37013752  0.62986248]
+ [ 0.35064036  0.64935964]]
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:
+Accuracy:	 98.84
+TESTING:
+Accuracy:	 51.02
+Precision:	 56.54
+Recall:		 47.01
+F1-score:	 51.34
+Confusion Matrix:
+[[1432 1129]
+ [1656 1469]]
+Normalized Confusion Matrix:
+[[ 0.55915658  0.44084342]
+ [ 0.52992     0.47008   ]]
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:
+Accuracy:	 98.83
+TESTING:
+Accuracy:	 50.95
+Precision:	 55.42
+Recall:		 53.20
+F1-score:	 54.29
+Confusion Matrix:
+[[1241 1332]
+ [1457 1656]]
+Normalized Confusion Matrix:
+[[ 0.48231636  0.51768364]
+ [ 0.46803726  0.53196274]]
+
+#################################################################
+#################################################################
+MULTINOMIAL NB
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:
+Accuracy:	 98.06
+TESTING:
+Accuracy:	 59.36
+Precision:	 66.53
+Recall:		 75.00
+F1-score:	 70.51
+Confusion Matrix:
+[[107 243]
+ [161 483]]
+Normalized Confusion Matrix:
+[[ 0.30571429  0.69428571]
+ [ 0.25        0.75      ]]
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:
+Accuracy:	 98.06
+TESTING:
+Accuracy:	 63.78
+Precision:	 73.58
+Recall:		 77.68
+F1-score:	 75.58
+Confusion Matrix:
+[[ 77 200]
+ [160 557]]
+Normalized Confusion Matrix:
+[[ 0.27797834  0.72202166]
+ [ 0.22315202  0.77684798]]
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:
+Accuracy:	 98.47
+TESTING:
+Accuracy:	 50.50
+Precision:	 50.36
+Recall:		 56.65
+F1-score:	 53.32
+Confusion Matrix:
+[[221 277]
+ [215 281]]
+Normalized Confusion Matrix:
+[[ 0.4437751   0.5562249 ]
+ [ 0.43346774  0.56653226]]
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:
+Accuracy:	 98.02
+TESTING:
+Accuracy:	 51.91
+Precision:	 55.21
+Recall:		 68.49
+F1-score:	 61.14
+Confusion Matrix:
+[[140 305]
+ [173 376]]
+Normalized Confusion Matrix:
+[[ 0.31460674  0.68539326]
+ [ 0.3151184   0.6848816 ]]
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:
+Accuracy:	 98.58
+TESTING:
+Accuracy:	 47.79
+Precision:	 57.71
+Recall:		 39.93
+F1-score:	 47.20
+Confusion Matrix:
+[[243 170]
+ [349 232]]
+Normalized Confusion Matrix:
+[[ 0.58837772  0.41162228]
+ [ 0.60068847  0.39931153]]
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:
+Accuracy:	 98.62
+TESTING:
+Accuracy:	 49.70
+Precision:	 55.03
+Recall:		 54.23
+F1-score:	 54.63
+Confusion Matrix:
+[[193 246]
+ [254 301]]
+Normalized Confusion Matrix:
+[[ 0.43963554  0.56036446]
+ [ 0.45765766  0.54234234]]
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:
+Accuracy:	 94.70
+TESTING:
+Accuracy:	 58.11
+Precision:	 65.04
+Recall:		 77.11
+F1-score:	 70.56
+Confusion Matrix:
+[[ 469 1602]
+ [ 885 2981]]
+Normalized Confusion Matrix:
+[[ 0.22646065  0.77353935]
+ [ 0.22891878  0.77108122]]
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:
+Accuracy:	 94.60
+TESTING:
+Accuracy:	 64.73
+Precision:	 71.90
+Recall:		 83.42
+F1-score:	 77.23
+Confusion Matrix:
+[[ 291 1388]
+ [ 706 3552]]
+Normalized Confusion Matrix:
+[[ 0.17331745  0.82668255]
+ [ 0.16580554  0.83419446]]
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:
+Accuracy:	 93.73
+TESTING:
+Accuracy:	 51.62
+Precision:	 50.49
+Recall:		 60.00
+F1-score:	 54.84
+Confusion Matrix:
+[[1209 1565]
+ [1064 1596]]
+Normalized Confusion Matrix:
+[[ 0.43583273  0.56416727]
+ [ 0.4         0.6       ]]
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:
+Accuracy:	 94.14
+TESTING:
+Accuracy:	 52.83
+Precision:	 53.88
+Recall:		 78.37
+F1-score:	 63.86
+Confusion Matrix:
+[[ 607 1938]
+ [ 625 2264]]
+Normalized Confusion Matrix:
+[[ 0.23850688  0.76149312]
+ [ 0.21633783  0.78366217]]
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:
+Accuracy:	 94.48
+TESTING:
+Accuracy:	 51.85
+Precision:	 57.38
+Recall:		 48.13
+F1-score:	 52.35
+Confusion Matrix:
+[[1444 1117]
+ [1621 1504]]
+Normalized Confusion Matrix:
+[[ 0.56384225  0.43615775]
+ [ 0.51872     0.48128   ]]
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:
+Accuracy:	 94.66
+TESTING:
+Accuracy:	 52.09
+Precision:	 55.23
+Recall:		 66.01
+F1-score:	 60.14
+Confusion Matrix:
+[[ 907 1666]
+ [1058 2055]]
+Normalized Confusion Matrix:
+[[ 0.3525068   0.6474932 ]
+ [ 0.33986508  0.66013492]]
+
+#################################################################
+#################################################################
+BERNOULLI NB
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:
+Accuracy:	 90.09
+TESTING:
+Accuracy:	 63.38
+Precision:	 64.49
+Recall:		 96.74
+F1-score:	 77.39
+Confusion Matrix:
+[[  7 343]
+ [ 21 623]]
+Normalized Confusion Matrix:
+[[ 0.02       0.98     ]
+ [ 0.0326087  0.9673913]]
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:
+Accuracy:	 88.41
+TESTING:
+Accuracy:	 70.93
+Precision:	 71.88
+Recall:		 98.05
+F1-score:	 82.95
+Confusion Matrix:
+[[  2 275]
+ [ 14 703]]
+Normalized Confusion Matrix:
+[[ 0.00722022  0.99277978]
+ [ 0.0195258   0.9804742 ]]
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:
+Accuracy:	 96.94
+TESTING:
+Accuracy:	 50.70
+Precision:	 50.38
+Recall:		 79.84
+F1-score:	 61.78
+Confusion Matrix:
+[[108 390]
+ [100 396]]
+Normalized Confusion Matrix:
+[[ 0.21686747  0.78313253]
+ [ 0.2016129   0.7983871 ]]
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:
+Accuracy:	 92.43
+TESTING:
+Accuracy:	 54.43
+Precision:	 55.15
+Recall:		 93.62
+F1-score:	 69.41
+Confusion Matrix:
+[[ 27 418]
+ [ 35 514]]
+Normalized Confusion Matrix:
+[[ 0.06067416  0.93932584]
+ [ 0.06375228  0.93624772]]
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:
+Accuracy:	 97.43
+TESTING:
+Accuracy:	 45.27
+Precision:	 55.95
+Recall:		 29.95
+F1-score:	 39.01
+Confusion Matrix:
+[[276 137]
+ [407 174]]
+Normalized Confusion Matrix:
+[[ 0.66828087  0.33171913]
+ [ 0.70051635  0.29948365]]
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:
+Accuracy:	 97.17
+TESTING:
+Accuracy:	 53.02
+Precision:	 56.09
+Recall:		 72.97
+F1-score:	 63.43
+Confusion Matrix:
+[[122 317]
+ [150 405]]
+Normalized Confusion Matrix:
+[[ 0.27790433  0.72209567]
+ [ 0.27027027  0.72972973]]
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:
+Accuracy:	 87.82
+TESTING:
+Accuracy:	 63.87
+Precision:	 65.29
+Recall:		 95.06
+F1-score:	 77.41
+Confusion Matrix:
+[[ 117 1954]
+ [ 191 3675]]
+Normalized Confusion Matrix:
+[[ 0.05649445  0.94350555]
+ [ 0.04940507  0.95059493]]
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:
+Accuracy:	 86.72
+TESTING:
+Accuracy:	 70.42
+Precision:	 71.68
+Recall:		 97.13
+F1-score:	 82.49
+Confusion Matrix:
+[[  45 1634]
+ [ 122 4136]]
+Normalized Confusion Matrix:
+[[ 0.02680167  0.97319833]
+ [ 0.02865195  0.97134805]]
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:
+Accuracy:	 92.89
+TESTING:
+Accuracy:	 49.54
+Precision:	 48.98
+Recall:		 74.29
+F1-score:	 59.04
+Confusion Matrix:
+[[ 716 2058]
+ [ 684 1976]]
+Normalized Confusion Matrix:
+[[ 0.25811103  0.74188897]
+ [ 0.25714286  0.74285714]]
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:
+Accuracy:	 90.82
+TESTING:
+Accuracy:	 52.65
+Precision:	 53.16
+Recall:		 91.97
+F1-score:	 67.38
+Confusion Matrix:
+[[ 204 2341]
+ [ 232 2657]]
+Normalized Confusion Matrix:
+[[ 0.08015717  0.91984283]
+ [ 0.0803046   0.9196954 ]]
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:
+Accuracy:	 94.49
+TESTING:
+Accuracy:	 51.09
+Precision:	 57.36
+Recall:		 42.88
+F1-score:	 49.08
+Confusion Matrix:
+[[1565  996]
+ [1785 1340]]
+Normalized Confusion Matrix:
+[[ 0.61108942  0.38891058]
+ [ 0.5712      0.4288    ]]
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:
+Accuracy:	 93.99
+TESTING:
+Accuracy:	 53.31
+Precision:	 55.34
+Recall:		 76.26
+F1-score:	 64.14
+Confusion Matrix:
+[[ 657 1916]
+ [ 739 2374]]
+Normalized Confusion Matrix:
+[[ 0.25534396  0.74465604]
+ [ 0.23739158  0.76260842]]

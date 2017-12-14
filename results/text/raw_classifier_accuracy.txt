@@ -1,0 +1,215 @@
+#################################################################
+#################################################################
+LOGISTIC REGRESSION
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:	Accuracy: 99.14
+TESTING:	Accuracy: 55.94	F1-score: 66.20
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:	Accuracy: 99.18
+TESTING:	Accuracy: 61.37	F1-score: 73.37
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:	Accuracy: 99.48
+TESTING:	Accuracy: 52.52	F1-score: 54.00
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:	Accuracy: 99.52
+TESTING:	Accuracy: 53.42	F1-score: 61.70
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:	Accuracy: 99.74
+TESTING:	Accuracy: 49.30	F1-score: 49.19
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:	Accuracy: 99.52
+TESTING:	Accuracy: 48.99	F1-score: 54.03
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:	Accuracy: 97.82
+TESTING:	Accuracy: 55.80	F1-score: 67.24
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:	Accuracy: 97.82
+TESTING:	Accuracy: 61.19	F1-score: 73.53
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:	Accuracy: 97.46
+TESTING:	Accuracy: 51.44	F1-score: 54.00
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:	Accuracy: 97.58
+TESTING:	Accuracy: 52.61	F1-score: 61.41
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:	Accuracy: 97.53
+TESTING:	Accuracy: 51.48	F1-score: 51.55
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:	Accuracy: 97.70
+TESTING:	Accuracy: 50.70	F1-score: 55.80
+
+#################################################################
+#################################################################
+LINEAR SVC
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:	Accuracy: 99.85
+TESTING:	Accuracy: 55.94	F1-score: 64.56
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:	Accuracy: 99.85
+TESTING:	Accuracy: 57.04	F1-score: 67.97
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:	Accuracy: 99.74
+TESTING:	Accuracy: 51.71	F1-score: 52.66
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:	Accuracy: 99.81
+TESTING:	Accuracy: 53.32	F1-score: 59.44
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:	Accuracy: 99.85
+TESTING:	Accuracy: 50.80	F1-score: 52.29
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:	Accuracy: 99.85
+TESTING:	Accuracy: 49.60	F1-score: 54.41
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:	Accuracy: 99.18
+TESTING:	Accuracy: 54.72	F1-score: 64.60
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:	Accuracy: 99.17
+TESTING:	Accuracy: 58.31	F1-score: 69.97
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:	Accuracy: 98.88
+TESTING:	Accuracy: 51.79	F1-score: 53.36
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:	Accuracy: 99.00
+TESTING:	Accuracy: 51.86	F1-score: 58.92
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:	Accuracy: 98.84
+TESTING:	Accuracy: 51.02	F1-score: 51.34
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:	Accuracy: 98.83
+TESTING:	Accuracy: 50.95	F1-score: 54.29
+
+#################################################################
+#################################################################
+MULTINOMIAL NB
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:	Accuracy: 98.06
+TESTING:	Accuracy: 59.36	F1-score: 70.51
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:	Accuracy: 98.06
+TESTING:	Accuracy: 63.78	F1-score: 75.58
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:	Accuracy: 98.47
+TESTING:	Accuracy: 50.50	F1-score: 53.32
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:	Accuracy: 98.02
+TESTING:	Accuracy: 51.91	F1-score: 61.14
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:	Accuracy: 98.58
+TESTING:	Accuracy: 47.79	F1-score: 47.20
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:	Accuracy: 98.62
+TESTING:	Accuracy: 49.70	F1-score: 54.63
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:	Accuracy: 94.70
+TESTING:	Accuracy: 58.11	F1-score: 70.56
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:	Accuracy: 94.60
+TESTING:	Accuracy: 64.73	F1-score: 77.23
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:	Accuracy: 93.73
+TESTING:	Accuracy: 51.62	F1-score: 54.84
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:	Accuracy: 94.14
+TESTING:	Accuracy: 52.83	F1-score: 63.86
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:	Accuracy: 94.48
+TESTING:	Accuracy: 51.85	F1-score: 52.35
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:	Accuracy: 94.66
+TESTING:	Accuracy: 52.09	F1-score: 60.14
+
+#################################################################
+#################################################################
+BERNOULLI NB
+#################################################################
+#################################################################
+
+[Final Test] Headlines - bitcoin_one:
+TRAINING:	Accuracy: 90.09
+TESTING:	Accuracy: 63.38	F1-score: 77.39
+
+[Final Test] Headlines - bitcoin_two:
+TRAINING:	Accuracy: 88.41
+TESTING:	Accuracy: 70.93	F1-score: 82.95
+
+[Final Test] Headlines - ethereum_one:
+TRAINING:	Accuracy: 96.94
+TESTING:	Accuracy: 50.70	F1-score: 61.78
+
+[Final Test] Headlines - ethereum_two:
+TRAINING:	Accuracy: 92.43
+TESTING:	Accuracy: 54.43	F1-score: 69.41
+
+[Final Test] Headlines - litecoin_one:
+TRAINING:	Accuracy: 97.43
+TESTING:	Accuracy: 45.27	F1-score: 39.01
+
+[Final Test] Headlines - litecoin_two:
+TRAINING:	Accuracy: 97.17
+TESTING:	Accuracy: 53.02	F1-score: 63.43
+
+[Final Test] Tweets - bitcoin_one:
+TRAINING:	Accuracy: 87.82
+TESTING:	Accuracy: 63.87	F1-score: 77.41
+
+[Final Test] Tweets - bitcoin_two:
+TRAINING:	Accuracy: 86.72
+TESTING:	Accuracy: 70.42	F1-score: 82.49
+
+[Final Test] Tweets - ethereum_one:
+TRAINING:	Accuracy: 92.89
+TESTING:	Accuracy: 49.54	F1-score: 59.04
+
+[Final Test] Tweets - ethereum_two:
+TRAINING:	Accuracy: 90.82
+TESTING:	Accuracy: 52.65	F1-score: 67.38
+
+[Final Test] Tweets - litecoin_one:
+TRAINING:	Accuracy: 94.49
+TESTING:	Accuracy: 51.09	F1-score: 49.08
+
+[Final Test] Tweets - litecoin_two:
+TRAINING:	Accuracy: 93.99
+TESTING:	Accuracy: 53.31	F1-score: 64.14
