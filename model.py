@@ -486,6 +486,13 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
     # Plot results
     if (plot_results): plot_predictions('Combined', classifier, combined_final_predictions) 
 
+    #################################
+    # Raw classifier output info
+    #################################
+    if (False):
+        print_classifier_results_all('v2', hl_classifier_results, '[Final Test] Headlines')
+        print_classifier_results_all('v2', t_classifier_results, '[Final Test] Tweets')
+
 ################################################################################################
 ################################################################################################
 # Main
@@ -530,7 +537,8 @@ def main():
     #######################################################
     if (True):
         print "Running model using default configurations..."
-        run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=True, saved_structs=True)
+        run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, 
+            print_results=True, plot_results=True, saved_structs=True)
 
     #######################################################
     # Experiment 0.1: Plot coin prices during train, dev, and test time periods
@@ -589,13 +597,14 @@ def main():
     if (False):
 
         # Choose if running for model validation (dev set) or final testing (test set)
-        run_type = 'validation'
-        #run_type = 'test'
+        #run_type = 'validation'
+        run_type = 'test'
 
         # Loop through all classifiers
         for classifier in CLASSIFIERS:
             print "Running model using %s classifier..." % classifier
-            run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, print_results=True, plot_results=False, saved_structs=False)
+            run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, 
+                print_results=True, plot_results=True, saved_structs=True)
 
     #######################################################
     # Experiment 2: Looking at feature weights

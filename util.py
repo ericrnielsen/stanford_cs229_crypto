@@ -309,7 +309,7 @@ def plot_coin_prices(all_prices):
 #################################################################
 # Print raw classifier results
 #################################################################
-def print_dev_results(classifier_results, description):  
+def print_classifier_results_v1(classifier_results, description):  
 
     print "\n%s:" % description
     print "TRAINING:"
@@ -321,6 +321,28 @@ def print_dev_results(classifier_results, description):
     print "F1-score:\t %.2f" % (classifier_results['F1'] * 100)
     print "Confusion Matrix:\n%s" % classifier_results['confusion_matrix']
     print "Normalized Confusion Matrix:\n%s" % classifier_results['normalized_confusion_matrix']
+
+#################################################################
+# Print raw classifier results (v2)
+#################################################################
+def print_classifier_results_v2(classifier_results, description):  
+
+    print "\n%s:" % description
+    print "TRAINING:\tAccuracy: %.2f" % (classifier_results['train_accuracy'] * 100)
+    print "TESTING:\tAccuracy: %.2f\tF1-score: %.2f" % \
+        ((classifier_results['accuracy'] * 100), (classifier_results['F1'] * 100))
+
+#################################################################
+# Print raw classifier results (v2) for all prediction labels
+#################################################################
+def print_classifier_results_all(version, all_classifier_results, description):  
+    i = -1
+    for item in all_classifier_results:
+        i += 1
+        if (version == 'v1'):
+            print_classifier_results_v1(item, ('%s - %s' % (description, PREDICTION_LABELS[i])))
+        else:
+            print_classifier_results_v2(item, ('%s - %s' % (description, PREDICTION_LABELS[i])))
 
 #################################################################
 # Print info on final model results
