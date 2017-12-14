@@ -1,0 +1,1554 @@
+DN51r04k:FINAL FILES ericnielsen$ python model.py 
+Loading data...
+Running model using linear_svc classifier...
+Predicting based on news headlines...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Headlines | linear_svc:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 46.03%, BTC2: 40.00%, ETH1: 52.31%, ETH2: 50.00%, LTC1: 45.16%, LTC2: 37.50%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count     8.000000
+mean      4.071387
+std       2.981036
+min       1.283057
+25%       2.267111
+50%       2.917871
+75%       4.815355
+max      10.244358
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    33.000000
+mean      3.751134
+std       2.983127
+min       0.126710
+25%       1.498833
+50%       3.268517
+75%       5.227988
+max      12.854710
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    21.000000
+mean     -2.347353
+std       2.078501
+min      -7.355416
+25%      -2.633840
+50%      -2.066901
+75%      -0.617521
+max      -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    1.000000
+mean    -6.410123
+std           NaN
+min     -6.410123
+25%     -6.410123
+50%     -6.410123
+75%     -6.410123
+max     -6.410123
+dtype: float64
+--------------------------------
+count    64.000000
+mean      1.527579
+std       4.074962
+min      -7.355416
+25%      -0.969116
+50%       1.390945
+75%       4.078782
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    3.000000
+mean     3.750332
+std      3.853543
+min      0.068385
+25%      1.747920
+50%      3.427454
+75%      5.591305
+max      7.755156
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    30.000000
+mean      3.468345
+std       3.491433
+min       0.224082
+25%       0.875839
+50%       2.913907
+75%       4.812526
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    31.000000
+mean     -1.826751
+std       1.425541
+min      -6.740838
+25%      -1.899621
+50%      -1.553002
+75%      -0.924386
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    1.000000
+mean    -2.567274
+std           NaN
+min     -2.567274
+25%     -2.567274
+50%     -2.567274
+75%     -2.567274
+max     -2.567274
+dtype: float64
+--------------------------------
+count    66.000000
+mean      0.830535
+std       3.748703
+min      -6.740838
+25%      -1.529865
+50%      -0.032847
+75%       2.940247
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    1.000000
+mean     0.921916
+std           NaN
+min      0.921916
+25%      0.921916
+50%      0.921916
+75%      0.921916
+max      0.921916
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    34.000000
+mean      4.412104
+std       4.207029
+min       0.525292
+25%       1.826584
+50%       2.686481
+75%       6.147958
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    27.000000
+mean     -2.831646
+std       2.075689
+min      -7.954194
+25%      -3.710920
+50%      -2.126879
+75%      -1.279515
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    63.000000
+mean      1.129049
+std       4.928856
+min      -7.954194
+25%      -1.979377
+50%       0.882579
+75%       2.758536
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on tweets...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Tweets | linear_svc:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 36.51%, BTC2: 39.68%, ETH1: 49.23%, ETH2: 46.88%, LTC1: 43.55%, LTC2: 42.86%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    2.000000
+mean     4.406018
+std      2.450089
+min      2.673543
+25%      3.539781
+50%      4.406018
+75%      5.272256
+max      6.138493
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    40.000000
+mean      3.752612
+std       3.022283
+min       0.126710
+25%       1.444889
+50%       2.973463
+75%       5.247648
+max      12.854710
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    21.000000
+mean     -2.554174
+std       2.257571
+min      -7.355416
+25%      -3.936756
+50%      -2.082861
+75%      -0.617521
+max      -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    64.000000
+mean      1.599843
+std       4.078237
+min      -7.355416
+25%      -0.677859
+50%       1.390945
+75%       4.165117
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    33.000000
+mean      3.493980
+std       3.461527
+min       0.068385
+25%       0.871874
+50%       2.966588
+75%       4.890382
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    32.000000
+mean     -1.849893
+std       1.408457
+min      -6.740838
+25%      -2.024390
+50%      -1.566001
+75%      -0.940506
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    66.000000
+mean      0.830535
+std       3.748703
+min      -6.740838
+25%      -1.529865
+50%      -0.032847
+75%       2.940247
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    35.000000
+mean      4.278707
+std       4.225347
+min       0.335174
+25%       1.090736
+50%       2.656005
+75%       5.808617
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    27.000000
+mean     -2.753171
+std       2.099037
+min      -7.954194
+25%      -3.710920
+50%      -2.029192
+75%      -1.208711
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    63.000000
+mean      1.143972
+std       4.911737
+min      -7.954194
+25%      -1.872135
+50%       0.870912
+75%       2.758536
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on both news headlines and tweets...
+
+Combined | linear_svc:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 46.03%, BTC2: 44.44%, ETH1: 52.31%, ETH2: 46.77%, LTC1: 45.16%, LTC2: 41.27%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count     9.000000
+mean      4.066451
+std       3.056504
+min       1.052797
+25%       2.042558
+50%       2.673543
+75%       6.138493
+max      10.242232
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    33.000000
+mean      3.706620
+std       2.996855
+min       0.126710
+25%       1.498833
+50%       3.268517
+75%       5.227988
+max      12.854710
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    20.000000
+mean     -2.314111
+std       2.022609
+min      -6.807053
+25%      -2.959569
+50%      -2.061933
+75%      -0.583407
+max      -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    1.000000
+mean    -7.355416
+std           NaN
+min     -7.355416
+25%     -7.355416
+50%     -7.355416
+75%     -7.355416
+max     -7.355416
+dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    3.000000
+mean     3.750332
+std      3.853543
+min      0.068385
+25%      1.747920
+50%      3.427454
+75%      5.591305
+max      7.755156
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    30.000000
+mean      3.468345
+std       3.491433
+min       0.224082
+25%       0.875839
+50%       2.913907
+75%       4.812526
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    31.000000
+mean     -1.826751
+std       1.425541
+min      -6.740838
+25%      -1.899621
+50%      -1.553002
+75%      -0.924386
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    1.000000
+mean    -2.567274
+std           NaN
+min     -2.567274
+25%     -2.567274
+50%     -2.567274
+75%     -2.567274
+max     -2.567274
+dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    1.000000
+mean     2.800115
+std           NaN
+min      2.800115
+25%      2.800115
+50%      2.800115
+75%      2.800115
+max      2.800115
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    34.000000
+mean      4.322195
+std       4.280932
+min       0.335174
+25%       1.077890
+50%       2.516431
+75%       6.147958
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    27.000000
+mean     -2.753171
+std       2.099037
+min      -7.954194
+25%      -3.710920
+50%      -2.029192
+75%      -1.208711
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+Running model using multinomial_nb classifier...
+Predicting based on news headlines...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Headlines | multinomial_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 55.56%, BTC2: 53.85%, ETH1: 50.00%, ETH2: 47.69%, LTC1: 43.75%, LTC2: 42.86%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    18.000000
+mean      4.674464
+std       3.237970
+min       0.208926
+25%       2.424857
+50%       4.327210
+75%       6.416349
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    23.000000
+mean      2.703690
+std       2.125530
+min       0.126710
+25%       1.107694
+50%       2.258507
+75%       3.825456
+max       7.921179
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    17.000000
+mean     -2.949636
+std       2.309829
+min      -7.355416
+25%      -4.237576
+50%      -2.097251
+75%      -1.299843
+max      -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    5.000000
+mean    -1.112147
+std      0.968140
+min     -2.602274
+25%     -1.577682
+50%     -0.617521
+75%     -0.384309
+max     -0.378950
+dtype: float64
+--------------------------------
+count    64.000000
+mean      1.370808
+std       3.924598
+min      -7.355416
+25%      -0.969116
+50%       1.222824
+75%       3.771983
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    2.000000
+mean     2.716251
+std      1.082989
+min      1.950462
+25%      2.333356
+50%      2.716251
+75%      3.099145
+max      3.482040
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    30.000000
+mean      3.518871
+std       3.621651
+min       0.068385
+25%       0.843410
+50%       2.913907
+75%       5.089763
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    30.000000
+mean     -1.835010
+std       1.449157
+min      -6.740838
+25%      -1.940839
+50%      -1.506728
+75%      -0.908267
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    2.000000
+mean    -2.073137
+std      0.698815
+min     -2.567274
+25%     -2.320205
+50%     -2.073137
+75%     -1.826068
+max     -1.579000
+dtype: float64
+--------------------------------
+count    65.000000
+mean      0.777117
+std       3.752476
+min      -6.740838
+25%      -1.553002
+50%      -0.134080
+75%       2.861226
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    36.000000
+mean      4.201906
+std       4.179140
+min       0.335174
+25%       1.103582
+50%       2.643311
+75%       5.469277
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    65.000000
+mean      1.082005
+std       4.860261
+min      -7.954194
+25%      -1.929562
+50%       0.870912
+75%       2.716957
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on tweets...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Tweets | multinomial_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 57.38%, BTC2: 59.68%, ETH1: 49.21%, ETH2: 42.19%, LTC1: 43.75%, LTC2: 50.82%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    27.000000
+mean      4.235870
+std       3.270551
+min       0.126710
+25%       1.934326
+50%       4.055991
+75%       5.824881
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    13.000000
+mean      3.159632
+std       2.345851
+min       0.208926
+25%       1.498833
+50%       2.341962
+75%       4.598430
+max       7.921179
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    8.000000
+mean    -1.961473
+std      2.367871
+min     -6.807053
+25%     -2.590148
+50%     -0.738197
+75%     -0.456878
+max     -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    13.000000
+mean     -2.956544
+std       2.180475
+min      -7.355416
+25%      -3.936756
+50%      -2.098790
+75%      -2.066901
+max      -0.279299
+dtype: float64
+--------------------------------
+count    62.000000
+mean      1.587547
+std       4.151201
+min      -7.355416
+25%      -0.798536
+50%       1.330711
+75%       4.201040
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    1.000000
+mean     6.359809
+std           NaN
+min      6.359809
+25%      6.359809
+50%      6.359809
+75%      6.359809
+max      6.359809
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    32.000000
+mean      3.404423
+std       3.477856
+min       0.068385
+25%       0.862386
+50%       2.913907
+75%       4.656814
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    30.000000
+mean     -1.940412
+std       1.408552
+min      -6.740838
+25%      -2.109058
+50%      -1.593231
+75%      -1.258578
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    64.000000
+mean      0.871868
+std       3.800158
+min      -6.740838
+25%      -1.559501
+50%       0.146234
+75%       3.081804
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    36.000000
+mean      4.283399
+std       4.145724
+min       0.335174
+25%       1.630332
+50%       2.686481
+75%       5.469277
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    65.000000
+mean      1.127140
+std       4.874188
+min      -7.954194
+25%      -1.929562
+50%       0.870912
+75%       2.800115
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on both news headlines and tweets...
+
+Combined | multinomial_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 63.93%, BTC2: 61.29%, ETH1: 46.03%, ETH2: 45.31%, LTC1: 43.75%, LTC2: 50.82%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    32.000000
+mean      4.128506
+std       3.105306
+min       0.126710
+25%       1.988442
+50%       3.866652
+75%       5.668075
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    8.000000
+mean     2.916441
+std      2.562821
+min      0.208926
+25%      1.387324
+50%      1.919704
+75%      3.954475
+max      7.921179
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    7.000000
+mean    -2.153467
+std      2.489426
+min     -6.807053
+25%     -3.139290
+50%     -0.858874
+75%     -0.432688
+max     -0.264383
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    14.000000
+mean     -2.789471
+std       2.186214
+min      -7.355416
+25%      -3.611027
+50%      -2.098021
+75%      -1.491607
+max      -0.279299
+dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    2.000000
+mean     4.920924
+std      2.034891
+min      3.482040
+25%      4.201482
+50%      4.920924
+75%      5.640367
+max      6.359809
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    31.000000
+mean      3.401919
+std       3.535315
+min       0.068385
+25%       0.852898
+50%       2.861226
+75%       4.734670
+max      15.783699
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    27.000000
+mean     -1.950462
+std       1.475795
+min      -6.740838
+25%      -2.066724
+50%      -1.579000
+75%      -1.110662
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    3.000000
+mean    -1.849959
+std      0.664093
+min     -2.567274
+25%     -2.146670
+50%     -1.726065
+75%     -1.491302
+max     -1.256538
+dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    36.000000
+mean      4.283399
+std       4.145724
+min       0.335174
+25%       1.630332
+50%       2.686481
+75%       5.469277
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+Running model using bernoulli_nb classifier...
+Predicting based on news headlines...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Headlines | bernoulli_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 65.57%, BTC2: 63.79%, ETH1: 48.44%, ETH2: 50.00%, LTC1: 43.08%, LTC2: 50.00%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    40.000000
+mean      3.637261
+std       2.815638
+min       0.126710
+25%       1.673556
+50%       2.920304
+75%       4.772808
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    21.000000
+mean     -2.347353
+std       2.078501
+min      -7.355416
+25%      -2.633840
+50%      -2.066901
+75%      -0.617521
+max      -0.264383
+dtype: float64
+--------------------------------
+count    62.000000
+mean      1.504953
+std       3.859011
+min      -7.355416
+25%      -0.798536
+50%       1.390945
+75%       3.961322
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    20.000000
+mean      4.137166
+std       3.632191
+min       0.068385
+25%       1.171244
+50%       3.723944
+75%       5.804020
+max      15.783699
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    13.000000
+mean      2.504463
+std       3.051822
+min       0.224082
+25%       0.819858
+50%       1.083040
+75%       3.486973
+max      11.382916
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    11.000000
+mean     -1.683346
+std       1.834646
+min      -6.740838
+25%      -1.620255
+50%      -1.256538
+75%      -0.769352
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    20.000000
+mean     -1.986156
+std       1.177924
+min      -4.889315
+25%      -2.210666
+50%      -1.693405
+75%      -1.381926
+max      -0.469909
+dtype: float64
+--------------------------------
+count    65.000000
+mean      0.858030
+std       3.771163
+min      -6.740838
+25%      -1.553002
+50%       0.068385
+75%       2.966588
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    37.000000
+mean      4.197805
+std       4.120763
+min       0.335174
+25%       1.116427
+50%       2.656005
+75%       5.129936
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    66.000000
+mean      1.126977
+std       4.836549
+min      -7.954194
+25%      -1.900848
+50%       0.876745
+75%       2.779325
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on tweets...
+Finished bitcoin_one.
+Finished bitcoin_two.
+Finished ethereum_one.
+Finished ethereum_two.
+Finished litecoin_one.
+Finished litecoin_two.
+
+Tweets | bernoulli_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 65.00%, BTC2: 61.40%, ETH1: 54.69%, ETH2: 50.00%, LTC1: 43.75%, LTC2: 67.21%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    39.000000
+mean      3.572348
+std       3.013450
+min       0.126710
+25%       1.390945
+50%       2.673543
+75%       4.517240
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    21.000000
+mean     -2.528680
+std       2.260022
+min      -7.355416
+25%      -3.936756
+50%      -2.066901
+75%      -0.617521
+max      -0.264383
+dtype: float64
+--------------------------------
+count    61.000000
+mean      1.366071
+std       4.028486
+min      -7.355416
+25%      -0.858874
+50%       1.162590
+75%       3.503757
+max      12.854710
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    18.000000
+mean      4.034868
+std       4.257113
+min       0.068385
+25%       0.832862
+50%       3.341183
+75%       5.503124
+max      15.783699
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    15.000000
+mean      2.844915
+std       2.133959
+min       0.256819
+25%       0.985387
+50%       2.966588
+75%       4.032965
+max       6.620512
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    17.000000
+mean     -1.970246
+std       1.627870
+min      -6.740838
+25%      -2.151392
+50%      -1.672767
+75%      -1.264698
+max      -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    14.000000
+mean     -1.576195
+std       1.060223
+min      -4.639074
+25%      -1.682800
+50%      -1.408187
+75%      -0.908267
+max      -0.469909
+dtype: float64
+--------------------------------
+count    65.000000
+mean      0.899246
+std       3.735757
+min      -6.740838
+25%      -1.460455
+50%       0.068385
+75%       2.966588
+max      15.783699
+Name: 1D Percent Change, dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    36.000000
+mean      4.263021
+std       4.159806
+min       0.335174
+25%       1.103582
+50%       2.686481
+75%       5.469277
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+count    65.000000
+mean      1.115853
+std       4.873337
+min      -7.954194
+25%      -1.929562
+50%       0.870912
+75%       2.800115
+max      18.117508
+Name: 1D Percent Change, dtype: float64
+Predicting based on both news headlines and tweets...
+
+Combined | bernoulli_nb:
+--------------------------------
+--------------------------------
+OVERALL:
+BTC1: 65.00%, BTC2: 61.40%, ETH1: 46.88%, ETH2: 50.00%, LTC1: 43.75%, LTC2: 63.93%
+--------------------------------
+--------------------------------
+BITCOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    39.000000
+mean      3.572348
+std       3.013450
+min       0.126710
+25%       1.390945
+50%       2.673543
+75%       4.517240
+max      12.854710
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    21.000000
+mean     -2.528680
+std       2.260022
+min      -7.355416
+25%      -3.936756
+50%      -2.066901
+75%      -0.617521
+max      -0.264383
+dtype: float64
+--------------------------------
+--------------------------------
+ETHEREUM:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    25.000000
+mean      3.957128
+std       3.795619
+min       0.068385
+25%       0.833922
+50%       3.482040
+75%       5.618757
+max      15.783699
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    8.000000
+mean     2.046644
+std      1.490313
+min      0.256819
+25%      1.034214
+50%      1.556520
+75%      3.096684
+max      4.578958
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    5.000000
+mean    -1.949152
+std      2.743231
+min     -6.740838
+25%     -1.687508
+50%     -0.806763
+75%     -0.376572
+max     -0.134080
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    26.000000
+mean     -1.762121
+std       1.057478
+min      -4.889315
+25%      -1.940839
+50%      -1.566001
+75%      -1.258578
+max      -0.469909
+dtype: float64
+--------------------------------
+--------------------------------
+LITECOIN:
+--------------------------------
+Price INCREASE (1 Day), Prediction CORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+--------------------------------
+Price INCREASE (1 Day), Prediction INCORRECT
+count    36.000000
+mean      4.263021
+std       4.159806
+min       0.335174
+25%       1.103582
+50%       2.686481
+75%       5.469277
+max      18.117508
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction CORRECT
+count    28.000000
+mean     -2.771050
+std       2.061971
+min      -7.954194
+25%      -3.620751
+50%      -2.078036
+75%      -1.234718
+max      -0.058162
+dtype: float64
+--------------------------------
+Price DECREASE (1 Day), Prediction INCORRECT
+count    0.0
+mean     NaN
+std      NaN
+min      NaN
+25%      NaN
+50%      NaN
+75%      NaN
+max      NaN
+dtype: float64
+DN51r04k:FINAL FILES ericnielsen$ 
