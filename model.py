@@ -1,5 +1,4 @@
-import pandas as pd
-import numpy as np
+from __future__ import print_function
 import pickle 
 
 from util import *
@@ -399,7 +398,7 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
     #################################
     # Headlines
     #################################
-    print "Predicting based on news headlines..."
+    print("Predicting based on news headlines...")
     # If no saved results to load
     if not (saved_structs):
         hl_classifier_results = []
@@ -412,7 +411,7 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
             # Save results
             hl_classifier_results.append(classifier_results)
             hl_final_predictions.append(final_predictions)
-            print "Finished %s." % label
+            print("Finished %s." % label)
         # Save results
         file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, classifier), 'wb')
         file2 = open('saved_model_structs/%s_%s_hl_final_predictions.pkl' % (run_type, classifier), 'wb')
@@ -436,7 +435,7 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
     #################################
     # Tweets
     #################################
-    print "Predicting based on tweets..."
+    print("Predicting based on tweets...")
     # If no saved results to load
     if not (saved_structs):
         t_classifier_results = []
@@ -456,7 +455,7 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
             # Save results
             t_classifier_results.append(classifier_results)
             t_final_predictions.append(final_predictions)
-            print "Finished %s." % label
+            print("Finished %s." % label)
         # Save results
         file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, classifier), 'wb')
         file2 = open('saved_model_structs/%s_%s_t_final_predictions.pkl' % (run_type, classifier), 'wb')
@@ -480,7 +479,7 @@ def run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, pr
     #################################
     # Combined
     #################################
-    print "Predicting based on both news headlines and tweets..."
+    print("Predicting based on both news headlines and tweets...")
     combined_final_predictions = combined_model_evaluate(hl_final_predictions, t_final_predictions, 'increase')
     # Print results
     if (print_results): print_predictions('Combined', classifier, combined_final_predictions)
@@ -504,7 +503,7 @@ def main():
     #######################################################
     # Setup
     #######################################################
-    print "Loading data..."
+    print("Loading data...")
 
     # Load headlines
     hl_train = load_csv(HEADLINES_TRAIN_FILE, HEADLINE_TEXT_COLUMN)
@@ -537,7 +536,7 @@ def main():
     # Default (run model using final hyperparameters)
     #######################################################
     if (True):
-        print "Running model using default configurations..."
+        print("Running model using default configurations...")
         run_model('test', 'logistic_regression', hl_all_data, tweets_all_data, all_prices, 
             print_results=True, plot_results=True, saved_structs=True)
 
@@ -603,7 +602,7 @@ def main():
 
         # Loop through all classifiers
         for classifier in CLASSIFIERS:
-            print "Running model using %s classifier..." % classifier
+            print("Running model using %s classifier..." % classifier)
             run_model(run_type, classifier, hl_all_data, tweets_all_data, all_prices, 
                 print_results=True, plot_results=True, saved_structs=True)
 
@@ -625,7 +624,7 @@ def main():
         #################################
         # Headlines
         #################################
-        print "Predicting based on news headlines..."
+        print("Predicting based on news headlines...")
         # If no saved results to load
         if not (saved_structs):
             hl_classifier_results = []
@@ -634,7 +633,7 @@ def main():
                 # Run model to assign labels to dev/test data, save results
                 classifier_results = model_fit_and_predict(run_type, 'headlines', hl_all_data, label, 'logistic_regression')
                 hl_classifier_results.append(classifier_results)
-                print "Finished %s." % label
+                print("Finished %s." % label)
             # Save results
             file1 = open('saved_model_structs/%s_%s_hl_classifier_results.pkl' % (run_type, 'logistic_regression'), 'wb')
             pickle.dump(hl_classifier_results, file1)
@@ -650,7 +649,7 @@ def main():
         #################################
         # Tweets
         #################################
-        print "Predicting based on tweets..."
+        print("Predicting based on tweets...")
         # If no saved results to load
         if not (saved_structs):
             t_classifier_results = []
@@ -666,7 +665,7 @@ def main():
                 # Run model to assign labels to dev/test data, save results
                 classifier_results = model_fit_and_predict(run_type, 'tweets', media_data, label, 'logistic_regression')
                 t_classifier_results.append(classifier_results)
-                print "Finished %s." % label
+                print("Finished %s." % label)
             # Save results
             file1 = open('saved_model_structs/%s_%s_t_classifier_results.pkl' % (run_type, 'logistic_regression'), 'wb')
             pickle.dump(t_classifier_results, file1)
@@ -680,4 +679,4 @@ def main():
         plot_multi_top_weights('Tweets', t_classifier_results, num_top_features)
 
 if __name__ == '__main__':
-	main()
+    main()

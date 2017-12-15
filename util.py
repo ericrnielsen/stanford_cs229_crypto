@@ -1,3 +1,4 @@
+from __future__ import print_function
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -82,14 +83,14 @@ def count_num_entries(df):
 # Print number of entries in datasets
 #################################################################
 def print_num_entries_headlines(hl_counts):
-    print "\nTOTAL ENTRY COUNTS:"
-    print "[Headlines]\t\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (hl_counts[0], hl_counts[1], hl_counts[2])
+    print("\nTOTAL ENTRY COUNTS:")
+    print("[Headlines]\t\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (hl_counts[0], hl_counts[1], hl_counts[2]))
 
 def print_num_entries_tweets(btc_counts, eth_counts, ltc_counts):
-    print "\nTOTAL ENTRY COUNTS:"
-    print "[Bitcoin tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (btc_counts[0], btc_counts[1], btc_counts[2])
-    print "[Ethereum tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (eth_counts[0], eth_counts[1], eth_counts[2])
-    print "[Litcoin tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (ltc_counts[0], ltc_counts[1], ltc_counts[2])
+    print("\nTOTAL ENTRY COUNTS:")
+    print("[Bitcoin tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (btc_counts[0], btc_counts[1], btc_counts[2]))
+    print("[Ethereum tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (eth_counts[0], eth_counts[1], eth_counts[2]))
+    print("[Litcoin tweets]\t Total train entries: %d, Total dev entries: %d, Total test entries: %d" % (ltc_counts[0], ltc_counts[1], ltc_counts[2]))
 
 #################################################################
 # Determine number of entries labeled '1' and '0' in dataset
@@ -154,45 +155,45 @@ def print_labels_headlines(hl_labels):
     hl_num_dev = hl_labels_dev['btc1'][0] + hl_labels_dev['btc1'][1]
     hl_num_test = hl_labels_test['btc1'][0] + hl_labels_test['btc1'][1]
     # Print
-    print "\nLABEL COUNTS:"
-    print "[Headlines]\t\t Train +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_train['btc1'][0], (hl_labels_train['btc1'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_train['btc1'][1], (hl_labels_train['btc1'][1]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_train['btc2'][0], (hl_labels_train['btc2'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_train['btc2'][1], (hl_labels_train['btc2'][1]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_train['eth1'][0], (hl_labels_train['eth1'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_train['eth1'][1], (hl_labels_train['eth1'][1]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_train['eth2'][0], (hl_labels_train['eth2'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_train['eth2'][1], (hl_labels_train['eth2'][1]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_train['ltc1'][0], (hl_labels_train['ltc1'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_train['ltc1'][1], (hl_labels_train['ltc1'][1]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_train['ltc2'][0], (hl_labels_train['ltc2'][0]*100.)/hl_num_train)
-    print "[Headlines]\t\t Train +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_train['ltc2'][1], (hl_labels_train['ltc2'][1]*100.)/hl_num_train)
-    print ""
-    print "[Headlines]\t\t Dev +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['btc1'][0], (hl_labels_dev['btc1'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['btc1'][1], (hl_labels_dev['btc1'][1]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['btc2'][0], (hl_labels_dev['btc2'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['btc2'][1], (hl_labels_dev['btc2'][1]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_dev['eth1'][0], (hl_labels_dev['eth1'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_dev['eth1'][1], (hl_labels_dev['eth1'][1]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_dev['eth2'][0], (hl_labels_dev['eth2'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_dev['eth2'][1], (hl_labels_dev['eth2'][1]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['ltc1'][0], (hl_labels_dev['ltc1'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['ltc1'][1], (hl_labels_dev['ltc1'][1]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['ltc2'][0], (hl_labels_dev['ltc2'][0]*100.)/hl_num_dev)
-    print "[Headlines]\t\t Dev +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['ltc2'][1], (hl_labels_dev['ltc2'][1]*100.)/hl_num_train)
-    print ""
-    print "[Headlines]\t\t Test +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_test['btc1'][0], (hl_labels_test['btc1'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_test['btc1'][1], (hl_labels_test['btc1'][1]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_test['btc2'][0], (hl_labels_test['btc2'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_test['btc2'][1], (hl_labels_test['btc2'][1]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_test['eth1'][0], (hl_labels_test['eth1'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_test['eth1'][1], (hl_labels_test['eth1'][1]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_test['eth2'][0], (hl_labels_test['eth2'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_test['eth2'][1], (hl_labels_test['eth2'][1]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_test['ltc1'][0], (hl_labels_test['ltc1'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_test['ltc1'][1], (hl_labels_test['ltc1'][1]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_test['ltc2'][0], (hl_labels_test['ltc2'][0]*100.)/hl_num_test)
-    print "[Headlines]\t\t Test +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_test['ltc2'][1], (hl_labels_test['ltc2'][1]*100.)/hl_num_test)
+    print("\nLABEL COUNTS:")
+    print("[Headlines]\t\t Train +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_train['btc1'][0], (hl_labels_train['btc1'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_train['btc1'][1], (hl_labels_train['btc1'][1]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_train['btc2'][0], (hl_labels_train['btc2'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_train['btc2'][1], (hl_labels_train['btc2'][1]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_train['eth1'][0], (hl_labels_train['eth1'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_train['eth1'][1], (hl_labels_train['eth1'][1]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_train['eth2'][0], (hl_labels_train['eth2'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_train['eth2'][1], (hl_labels_train['eth2'][1]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_train['ltc1'][0], (hl_labels_train['ltc1'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_train['ltc1'][1], (hl_labels_train['ltc1'][1]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_train['ltc2'][0], (hl_labels_train['ltc2'][0]*100.)/hl_num_train))
+    print("[Headlines]\t\t Train +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_train['ltc2'][1], (hl_labels_train['ltc2'][1]*100.)/hl_num_train))
+    print("")
+    print("[Headlines]\t\t Dev +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['btc1'][0], (hl_labels_dev['btc1'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['btc1'][1], (hl_labels_dev['btc1'][1]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['btc2'][0], (hl_labels_dev['btc2'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['btc2'][1], (hl_labels_dev['btc2'][1]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_dev['eth1'][0], (hl_labels_dev['eth1'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_dev['eth1'][1], (hl_labels_dev['eth1'][1]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_dev['eth2'][0], (hl_labels_dev['eth2'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_dev['eth2'][1], (hl_labels_dev['eth2'][1]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['ltc1'][0], (hl_labels_dev['ltc1'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['ltc1'][1], (hl_labels_dev['ltc1'][1]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_dev['ltc2'][0], (hl_labels_dev['ltc2'][0]*100.)/hl_num_dev))
+    print("[Headlines]\t\t Dev +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_dev['ltc2'][1], (hl_labels_dev['ltc2'][1]*100.)/hl_num_train))
+    print("")
+    print("[Headlines]\t\t Test +1 day BTC labeled 0: %d (%.2f%%)" % (hl_labels_test['btc1'][0], (hl_labels_test['btc1'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +1 day BTC labeled 1: %d (%.2f%%)" % (hl_labels_test['btc1'][1], (hl_labels_test['btc1'][1]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days BTC labeled 0: %d (%.2f%%)" % (hl_labels_test['btc2'][0], (hl_labels_test['btc2'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days BTC labeled 1: %d (%.2f%%)" % (hl_labels_test['btc2'][1], (hl_labels_test['btc2'][1]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +1 day ETH labeled 0: %d (%.2f%%)" % (hl_labels_test['eth1'][0], (hl_labels_test['eth1'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +1 day ETH labeled 1: %d (%.2f%%)" % (hl_labels_test['eth1'][1], (hl_labels_test['eth1'][1]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days ETH labeled 0: %d (%.2f%%)" % (hl_labels_test['eth2'][0], (hl_labels_test['eth2'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days ETH labeled 1: %d (%.2f%%)" % (hl_labels_test['eth2'][1], (hl_labels_test['eth2'][1]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +1 day LTC labeled 0: %d (%.2f%%)" % (hl_labels_test['ltc1'][0], (hl_labels_test['ltc1'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +1 day LTC labeled 1: %d (%.2f%%)" % (hl_labels_test['ltc1'][1], (hl_labels_test['ltc1'][1]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days LTC labeled 0: %d (%.2f%%)" % (hl_labels_test['ltc2'][0], (hl_labels_test['ltc2'][0]*100.)/hl_num_test))
+    print("[Headlines]\t\t Test +2 days LTC labeled 1: %d (%.2f%%)" % (hl_labels_test['ltc2'][1], (hl_labels_test['ltc2'][1]*100.)/hl_num_test))
 
 #################################################################
 # Print number of entries labeled '1' and '0' in tweet datasets
@@ -213,51 +214,51 @@ def print_labels_tweets(btc_labels, eth_labels, ltc_labels):
     ltc_num_dev = ltc_dev['ltc1'][0] + ltc_dev['ltc1'][1]
     ltc_num_test = ltc_test['ltc1'][0] + ltc_test['ltc1'][1]
     # Print
-    print "\nLABEL COUNTS:"
-    print "[Bitcoin tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (btc_train['btc1'][0], (btc_train['btc1'][0]*100.)/btc_num_train)
-    print "[Bitcoin tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (btc_train['btc1'][1], (btc_train['btc1'][1]*100.)/btc_num_train)
-    print "[Bitcoin tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (btc_train['btc2'][0], (btc_train['btc2'][0]*100.)/btc_num_train)
-    print "[Bitcoin tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (btc_train['btc2'][1], (btc_train['btc2'][1]*100.)/btc_num_train)
-    print ""
-    print "[Bitcoin tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (btc_dev['btc1'][0], (btc_dev['btc1'][0]*100.)/btc_num_dev)
-    print "[Bitcoin tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (btc_dev['btc1'][1], (btc_dev['btc1'][1]*100.)/btc_num_dev)
-    print "[Bitcoin tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (btc_dev['btc2'][0], (btc_dev['btc2'][0]*100.)/btc_num_dev)
-    print "[Bitcoin tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (btc_dev['btc2'][1], (btc_dev['btc2'][1]*100.)/btc_num_dev)
-    print ""
-    print "[Bitcoin tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (btc_test['btc1'][0], (btc_test['btc1'][0]*100.)/btc_num_test)
-    print "[Bitcoin tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (btc_test['btc1'][1], (btc_test['btc1'][1]*100.)/btc_num_test)
-    print "[Bitcoin tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (btc_test['btc2'][0], (btc_test['btc2'][0]*100.)/btc_num_test)
-    print "[Bitcoin tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (btc_test['btc2'][1], (btc_test['btc2'][1]*100.)/btc_num_test)
-    print ""
-    print "[Ethereum tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (eth_train['eth1'][0], (eth_train['eth1'][0]*100.)/eth_num_train)
-    print "[Ethereum tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (eth_train['eth1'][1], (eth_train['eth1'][1]*100.)/eth_num_train)
-    print "[Ethereum tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (eth_train['eth2'][0], (eth_train['eth2'][0]*100.)/eth_num_train)
-    print "[Ethereum tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (eth_train['eth2'][1], (eth_train['eth2'][1]*100.)/eth_num_train)
-    print ""
-    print "[Ethereum tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (eth_dev['eth1'][0], (eth_dev['eth1'][0]*100.)/eth_num_dev)
-    print "[Ethereum tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (eth_dev['eth1'][1], (eth_dev['eth1'][1]*100.)/eth_num_dev)
-    print "[Ethereum tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (eth_dev['eth2'][0], (eth_dev['eth2'][0]*100.)/eth_num_dev)
-    print "[Ethereum tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (eth_dev['eth2'][1], (eth_dev['eth2'][1]*100.)/eth_num_dev)
-    print ""
-    print "[Ethereum tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (eth_test['eth1'][0], (eth_test['eth1'][0]*100.)/eth_num_test)
-    print "[Ethereum tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (eth_test['eth1'][1], (eth_test['eth1'][1]*100.)/eth_num_test)
-    print "[Ethereum tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (eth_test['eth2'][0], (eth_test['eth2'][0]*100.)/eth_num_test)
-    print "[Ethereum tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (eth_test['eth2'][1], (eth_test['eth2'][1]*100.)/eth_num_test)
-    print ""
-    print "[Litecoin tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (ltc_train['ltc1'][0], (ltc_train['ltc1'][0]*100.)/ltc_num_train)
-    print "[Litecoin tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (ltc_train['ltc1'][1], (ltc_train['ltc1'][1]*100.)/ltc_num_train)
-    print "[Litecoin tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (ltc_train['ltc2'][0], (ltc_train['ltc2'][0]*100.)/ltc_num_train)
-    print "[Litecoin tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (ltc_train['ltc2'][1], (ltc_train['ltc2'][1]*100.)/ltc_num_train)
-    print ""
-    print "[Litecoin tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (ltc_dev['ltc1'][0], (ltc_dev['ltc1'][0]*100.)/ltc_num_dev)
-    print "[Litecoin tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (ltc_dev['ltc1'][1], (ltc_dev['ltc1'][1]*100.)/ltc_num_dev)
-    print "[Litecoin tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (ltc_dev['ltc2'][0], (ltc_dev['ltc2'][0]*100.)/ltc_num_dev)
-    print "[Litecoin tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (ltc_dev['ltc2'][1], (ltc_dev['ltc2'][1]*100.)/ltc_num_dev)
-    print ""
-    print "[Litecoin tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (ltc_test['ltc1'][0], (ltc_test['ltc1'][0]*100.)/ltc_num_test)
-    print "[Litecoin tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (ltc_test['ltc1'][1], (ltc_test['ltc1'][1]*100.)/ltc_num_test)
-    print "[Litecoin tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (ltc_test['ltc2'][0], (ltc_test['ltc2'][0]*100.)/ltc_num_test)
-    print "[Litecoin tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (ltc_test['ltc2'][1], (ltc_test['ltc2'][1]*100.)/ltc_num_test)
+    print("\nLABEL COUNTS:")
+    print("[Bitcoin tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (btc_train['btc1'][0], (btc_train['btc1'][0]*100.)/btc_num_train))
+    print("[Bitcoin tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (btc_train['btc1'][1], (btc_train['btc1'][1]*100.)/btc_num_train))
+    print("[Bitcoin tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (btc_train['btc2'][0], (btc_train['btc2'][0]*100.)/btc_num_train))
+    print("[Bitcoin tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (btc_train['btc2'][1], (btc_train['btc2'][1]*100.)/btc_num_train))
+    print("")
+    print("[Bitcoin tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (btc_dev['btc1'][0], (btc_dev['btc1'][0]*100.)/btc_num_dev))
+    print("[Bitcoin tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (btc_dev['btc1'][1], (btc_dev['btc1'][1]*100.)/btc_num_dev))
+    print("[Bitcoin tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (btc_dev['btc2'][0], (btc_dev['btc2'][0]*100.)/btc_num_dev))
+    print("[Bitcoin tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (btc_dev['btc2'][1], (btc_dev['btc2'][1]*100.)/btc_num_dev))
+    print("")
+    print("[Bitcoin tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (btc_test['btc1'][0], (btc_test['btc1'][0]*100.)/btc_num_test))
+    print("[Bitcoin tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (btc_test['btc1'][1], (btc_test['btc1'][1]*100.)/btc_num_test))
+    print("[Bitcoin tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (btc_test['btc2'][0], (btc_test['btc2'][0]*100.)/btc_num_test))
+    print("[Bitcoin tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (btc_test['btc2'][1], (btc_test['btc2'][1]*100.)/btc_num_test))
+    print("")
+    print("[Ethereum tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (eth_train['eth1'][0], (eth_train['eth1'][0]*100.)/eth_num_train))
+    print("[Ethereum tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (eth_train['eth1'][1], (eth_train['eth1'][1]*100.)/eth_num_train))
+    print("[Ethereum tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (eth_train['eth2'][0], (eth_train['eth2'][0]*100.)/eth_num_train))
+    print("[Ethereum tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (eth_train['eth2'][1], (eth_train['eth2'][1]*100.)/eth_num_train))
+    print("")
+    print("[Ethereum tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (eth_dev['eth1'][0], (eth_dev['eth1'][0]*100.)/eth_num_dev))
+    print("[Ethereum tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (eth_dev['eth1'][1], (eth_dev['eth1'][1]*100.)/eth_num_dev))
+    print("[Ethereum tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (eth_dev['eth2'][0], (eth_dev['eth2'][0]*100.)/eth_num_dev))
+    print("[Ethereum tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (eth_dev['eth2'][1], (eth_dev['eth2'][1]*100.)/eth_num_dev))
+    print("")
+    print("[Ethereum tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (eth_test['eth1'][0], (eth_test['eth1'][0]*100.)/eth_num_test))
+    print("[Ethereum tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (eth_test['eth1'][1], (eth_test['eth1'][1]*100.)/eth_num_test))
+    print("[Ethereum tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (eth_test['eth2'][0], (eth_test['eth2'][0]*100.)/eth_num_test))
+    print("[Ethereum tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (eth_test['eth2'][1], (eth_test['eth2'][1]*100.)/eth_num_test))
+    print("")
+    print("[Litecoin tweets]\t Train +1 day labeled 0: %d (%.2f%%)" % (ltc_train['ltc1'][0], (ltc_train['ltc1'][0]*100.)/ltc_num_train))
+    print("[Litecoin tweets]\t Train +1 day labeled 1: %d (%.2f%%)" % (ltc_train['ltc1'][1], (ltc_train['ltc1'][1]*100.)/ltc_num_train))
+    print("[Litecoin tweets]\t Train +2 days labeled 0: %d (%.2f%%)" % (ltc_train['ltc2'][0], (ltc_train['ltc2'][0]*100.)/ltc_num_train))
+    print("[Litecoin tweets]\t Train +2 days labeled 1: %d (%.2f%%)" % (ltc_train['ltc2'][1], (ltc_train['ltc2'][1]*100.)/ltc_num_train))
+    print("")
+    print("[Litecoin tweets]\t Dev +1 day labeled 0: %d (%.2f%%)" % (ltc_dev['ltc1'][0], (ltc_dev['ltc1'][0]*100.)/ltc_num_dev))
+    print("[Litecoin tweets]\t Dev +1 day labeled 1: %d (%.2f%%)" % (ltc_dev['ltc1'][1], (ltc_dev['ltc1'][1]*100.)/ltc_num_dev))
+    print("[Litecoin tweets]\t Dev +2 days labeled 0: %d (%.2f%%)" % (ltc_dev['ltc2'][0], (ltc_dev['ltc2'][0]*100.)/ltc_num_dev))
+    print("[Litecoin tweets]\t Dev +2 days labeled 1: %d (%.2f%%)" % (ltc_dev['ltc2'][1], (ltc_dev['ltc2'][1]*100.)/ltc_num_dev))
+    print("")
+    print("[Litecoin tweets]\t Test +1 day labeled 0: %d (%.2f%%)" % (ltc_test['ltc1'][0], (ltc_test['ltc1'][0]*100.)/ltc_num_test))
+    print("[Litecoin tweets]\t Test +1 day labeled 1: %d (%.2f%%)" % (ltc_test['ltc1'][1], (ltc_test['ltc1'][1]*100.)/ltc_num_test))
+    print("[Litecoin tweets]\t Test +2 days labeled 0: %d (%.2f%%)" % (ltc_test['ltc2'][0], (ltc_test['ltc2'][0]*100.)/ltc_num_test))
+    print("[Litecoin tweets]\t Test +2 days labeled 1: %d (%.2f%%)" % (ltc_test['ltc2'][1], (ltc_test['ltc2'][1]*100.)/ltc_num_test))
 
 #################################################################
 # Calculate the price changes based on coin data
@@ -311,26 +312,26 @@ def plot_coin_prices(all_prices):
 #################################################################
 def print_classifier_results_v1(classifier_results, description):  
 
-    print "\n%s:" % description
-    print "TRAINING:"
-    print "Accuracy:\t %.2f" % (classifier_results['train_accuracy'] * 100)
-    print "TESTING:"
-    print "Accuracy:\t %.2f" % (classifier_results['accuracy'] * 100)
-    print "Precision:\t %.2f" % (classifier_results['precision'] * 100)
-    print "Recall:\t\t %.2f" % (classifier_results['recall'] * 100)
-    print "F1-score:\t %.2f" % (classifier_results['F1'] * 100)
-    print "Confusion Matrix:\n%s" % classifier_results['confusion_matrix']
-    print "Normalized Confusion Matrix:\n%s" % classifier_results['normalized_confusion_matrix']
+    print("\n%s:" % description)
+    print("TRAINING:")
+    print("Accuracy:\t %.2f" % (classifier_results['train_accuracy'] * 100))
+    print("TESTING:")
+    print("Accuracy:\t %.2f" % (classifier_results['accuracy'] * 100))
+    print("Precision:\t %.2f" % (classifier_results['precision'] * 100))
+    print("Recall:\t\t %.2f" % (classifier_results['recall'] * 100))
+    print("F1-score:\t %.2f" % (classifier_results['F1'] * 100))
+    print("Confusion Matrix:\n%s" % classifier_results['confusion_matrix'])
+    print("Normalized Confusion Matrix:\n%s" % classifier_results['normalized_confusion_matrix'])
 
 #################################################################
 # Print raw classifier results (v2)
 #################################################################
 def print_classifier_results_v2(classifier_results, description):  
 
-    print "\n%s:" % description
-    print "TRAINING:\tAccuracy: %.2f" % (classifier_results['train_accuracy'] * 100)
-    print "TESTING:\tAccuracy: %.2f\tF1-score: %.2f" % \
-        ((classifier_results['accuracy'] * 100), (classifier_results['F1'] * 100))
+    print("\n%s:" % description)
+    print("TRAINING:\tAccuracy: %.2f" % (classifier_results['train_accuracy'] * 100))
+    print("TESTING:\tAccuracy: %.2f\tF1-score: %.2f" % \
+        ((classifier_results['accuracy'] * 100), (classifier_results['F1'] * 100)))
 
 #################################################################
 # Print raw classifier results (v2) for all prediction labels
@@ -349,46 +350,46 @@ def print_classifier_results_all(version, all_classifier_results, description):
 #################################################################
 def print_predictions(data_type, classifier, results):
     # Describe model run
-    print "\n%s | %s:" % (data_type, classifier)
+    print("\n%s | %s:" % (data_type, classifier))
     # Overall accuracy
-    print "--------------------------------"
-    print "--------------------------------"
-    print "OVERALL:"
-    print "BTC1: %.2f%%, BTC2: %.2f%%, ETH1: %.2f%%, ETH2: %.2f%%, LTC1: %.2f%%, LTC2: %.2f%%" % \
+    print("--------------------------------")
+    print("--------------------------------")
+    print("OVERALL:")
+    print("BTC1: %.2f%%, BTC2: %.2f%%, ETH1: %.2f%%, ETH2: %.2f%%, LTC1: %.2f%%, LTC2: %.2f%%" % \
         ((results[0]['cache']['accuracy'] * 100), (results[1]['cache']['accuracy'] * 100), 
         (results[2]['cache']['accuracy'] * 100), (results[3]['cache']['accuracy'] * 100), 
-        (results[4]['cache']['accuracy'] * 100), (results[5]['cache']['accuracy'] * 100))
+        (results[4]['cache']['accuracy'] * 100), (results[5]['cache']['accuracy'] * 100)))
     # Loop through each of the coins (only care about 1 day price predictions)
     i = -2
     for coin in COINS:
         i += 2
-        print "--------------------------------"
-        print "--------------------------------"
-        print "%s:" % coin.upper()
+        print("--------------------------------")
+        print("--------------------------------")
+        print("%s:" % coin.upper())
         # Correct price increase predictions
-        print "--------------------------------"
-        print "Price INCREASE (1 Day), Prediction CORRECT"
+        print("--------------------------------")
+        print("Price INCREASE (1 Day), Prediction CORRECT")
         price_increase_1day_df = pd.Series(results[i]['cache']['price_increase'])
-        print price_increase_1day_df.describe()
+        print(price_increase_1day_df.describe())
         # Incorrect price increase predictions
-        print "--------------------------------"
-        print "Price INCREASE (1 Day), Prediction INCORRECT"
+        print("--------------------------------")
+        print("Price INCREASE (1 Day), Prediction INCORRECT")
         price_increase_1day_wrong_df = pd.Series(results[i]['cache']['price_increase_wrong'])
-        print price_increase_1day_wrong_df.describe()
+        print(price_increase_1day_wrong_df.describe())
         # Correct price decrease predictions
-        print "--------------------------------"
-        print "Price DECREASE (1 Day), Prediction CORRECT"
+        print("--------------------------------")
+        print("Price DECREASE (1 Day), Prediction CORRECT")
         price_decrease_1day_df = pd.Series(results[i]['cache']['price_decrease'])
-        print price_decrease_1day_df.describe()
+        print(price_decrease_1day_df.describe())
         # Incorrect price decrease predictions
-        print "--------------------------------"
-        print "Price DECREASE (1 Day), Prediction INCORRECT"
+        print("--------------------------------")
+        print("Price DECREASE (1 Day), Prediction INCORRECT")
         price_decrease_1day_wrong_df = pd.Series(results[i]['cache']['price_decrease_wrong'])
-        print price_decrease_1day_wrong_df.describe()
+        print(price_decrease_1day_wrong_df.describe())
         # Stats for the full DataFrame to see how we compare to the average increases/decreases and max/mins
         if (data_type != 'Combined'):
-            print "--------------------------------"
-            print results[i]['pred_df']['1D Percent Change'].describe()
+            print("--------------------------------")
+            print(results[i]['pred_df']['1D Percent Change'].describe())
 
 #################################################################
 # Plot predicted price changes
